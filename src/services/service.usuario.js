@@ -11,9 +11,7 @@ async function AddUsuario(user) {
 
   if (validarUsuario.idusuario) throw "E-mail de usuário já cadastrado....!"
 
-  const senha = await jwt.EncryptaPassword(user.password)
-
-  user.password = senha
+  user.password = await jwt.EncryptaPassword(user.password)
 
   //const usuario = await repopsitoryUsuario.AddUsuario(user) // Chamada Banco de dados Mssql
 
@@ -35,17 +33,13 @@ async function Listar() {
 async function ListarId(id) {
   //Acessar o banco de dados....
 
-  const retorno = await repopsitoryUsuario.ListarId(id)
-
-  return retorno
+  return await repopsitoryUsuario.ListarId(id)
 }
 
 async function Perfil(id) {
   //Acessar o banco de dados....
 
-  const usuario = await repopsitoryUsuario.ListarById(id)
-
-  return usuario
+  return await repopsitoryUsuario.ListarById(id)
 }
 
 async function Login(email, password) {

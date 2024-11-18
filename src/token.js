@@ -5,11 +5,9 @@ const secretKey = 'Rigon216$123546';
 
 function CreateToken(idUsuario) {
 
-    const token = jwt.sign({idUsuario}, secretKey, {
+    return jwt.sign({idUsuario}, secretKey, {
         expiresIn: 9999999
     });
-
-    return token;
 }
 
 function ValidateToken(req, res, next) {
@@ -50,7 +48,7 @@ function VerificaIdToken(req, res, next) {
 
         const idToken = decoded.idUsuario;
 
-        if (idToken != idUsuario.id)
+        if (idToken !== idUsuario.id)
             return res.status(401).send({error: 'Id Usuario informado, diferente do Id Token...'});
 
         next();
@@ -59,9 +57,7 @@ function VerificaIdToken(req, res, next) {
 
 async function EncryptaPassword(password) {
 
-    const encrypta = await bcrypt.hash(password, 10);
-
-    return encrypta;
+    return await bcrypt.hash(password, 10);
 }
 
 async function VerifyPassword(password, hash) {
@@ -69,9 +65,8 @@ async function VerifyPassword(password, hash) {
         const match = await bcrypt.compare(password, hash);
         if (match) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     } catch (error) {
         return false;
     }

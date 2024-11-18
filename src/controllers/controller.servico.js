@@ -6,7 +6,7 @@ async function AddServico(req, res) {
   try {
     const response = await serviceServico.AddServico(servico)
 
-    if (response.status == "Ok") {
+    if (response.status === "Ok") {
       res.status(201).json(response)
     } else {
       res.status(401).json({ status: response.status })

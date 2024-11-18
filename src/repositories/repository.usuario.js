@@ -87,7 +87,7 @@ async function ListarByEmail(email) {
       .query(`select * from usuario  
                 where email = @email`)
 
-    if (usuario.rowsAffected[0] == 0) return []
+    if (usuario.rowsAffected[0] === 0) return []
     else return usuario.recordset[0]
   } catch (err) {
     return []

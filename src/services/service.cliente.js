@@ -7,36 +7,28 @@ async function AddCliente(cliente) {
     if (validarCliente)
         throw 'E-mail já cadastrado';
 
-    const cli = await repositoryCliente.AddCliente(cliente);
-
-    return cli;
+    return await repositoryCliente.AddCliente(cliente);
 }
 
 async function ListarById(id) {
 
     //Acessar o banco de dados....
 
-    const retorno = await repositoryCliente.ListarById(id);
-
-    return retorno;
+    return await repositoryCliente.ListarById(id);
 }
 
 async function DeleteById(id_usuario, id_cliente) {
 
     //Acessar o banco de dados....
 
-    const retorno = await repositoryCliente.DeleteById(id_usuario, id_cliente);
-
-    return retorno;
+    return await repositoryCliente.DeleteById(id_usuario, id_cliente);
 }
 
 async function ListaByNome(nome, id) {
 
     //Acessar o banco de dados....
 
-    const retorno = await repositoryCliente.ListaByNome(nome, id);
-
-    return retorno;
+    return await repositoryCliente.ListaByNome(nome, id);
 }
 
 export default {AddCliente, ListarById, DeleteById, ListaByNome};

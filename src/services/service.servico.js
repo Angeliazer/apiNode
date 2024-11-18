@@ -1,19 +1,12 @@
 import repositoryServico from '../repositories/repository.servico.js'
 
 async function AddServico(servico){
-
-    const res = await repositoryServico.AddServico(servico)
-
-    return res
-
+    return await repositoryServico.AddServico(servico)
 }
 
 async function ListaServicoClientes(idUsuario, idCliente){
 
-    const res = await repositoryServico.ListaServicoClientes(idUsuario, idCliente)
-
-    return res
-
+    return await repositoryServico.ListaServicoClientes(idUsuario, idCliente)
 }
 
 export default {AddServico, ListaServicoClientes}

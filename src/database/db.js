@@ -21,7 +21,7 @@ const config = {
 // Função para conectar ao banco de dados
 export async function connectToDatabase() {
     try {
-        const pool = await sql.connect(config);
+        const pool =  await sql.connect(config);
         return pool;
     } catch (err) {
         console.error('Erro ao conectar ao banco de dados:', err);

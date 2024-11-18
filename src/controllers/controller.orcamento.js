@@ -1,8 +1,6 @@
-import { Orcamento } from "../models/model.orcamento.js"
 import serviceOrcamento from "../services/service.orcamento.js"
 import PDFDocument from "pdfkit"
 import nodemailer from "nodemailer"
-import fs from "fs"
 
 async function AddOrcamento(req, res) {
   try {
@@ -42,7 +40,7 @@ async function ListaOrcamento(req, res) {
   try {
     const result = await serviceOrcamento.ListaOrcamento(idUsuario)
 
-    if (result.length == 0) res.status(200).json([])
+    if (result.length === 0) res.status(200).json([])
     else res.status(200).json(result)
   } catch (error) {
     console.log(error)
@@ -55,7 +53,7 @@ async function ListaItemsOrcamento(req, res) {
   try {
     const result = await serviceOrcamento.ListaItemsOrcamento(idOrcamento)
 
-    if (result.length == 0) res.status(200).json([])
+    if (result.length === 0) res.status(200).json([])
     else res.status(200).json(result)
   } catch (error) {
     console.log(error)
@@ -74,7 +72,7 @@ async function ListaOrcamentoData(req, res) {
       idUsuario
     )
 
-    if (result.length == 0) res.status(200).json([])
+    if (result.length === 0) res.status(200).json([])
     else res.status(200).json(result)
   } catch (error) {
     res.status(500).json({ status: error })
@@ -88,7 +86,7 @@ async function ListaOrcCliente(req, res) {
   try {
     const result = await serviceOrcamento.ListaOrcCliente(idUsuario, idCliente)
 
-    if (result.length == 0) res.status(200).json([])
+    if (result.length === 0) res.status(200).json([])
     else res.status(200).json(result)
   } catch (error) {
     res.status(500).json({ status: error })
@@ -101,7 +99,7 @@ async function DelOrcamento(req, res) {
   try {
     const orcamento = await serviceOrcamento.DelOrcamento(idOrcamento)
 
-    if (orcamento == 0) res.status(200).json({ status: 0 })
+    if (orcamento === 0) res.status(200).json({ status: 0 })
     else res.status(200).json({ status: 1 })
   } catch (error) {
     res.status(500).json({ status: error })
