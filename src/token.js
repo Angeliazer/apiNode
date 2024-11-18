@@ -1,7 +1,10 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import {config} from 'dotenv';
 
-const secretKey = 'Rigon216$123546';
+config();   // Busca informações no .env
+
+const secretKey = process.env.JWT_SECRET_KEY;
 
 function CreateToken(idUsuario) {
 
@@ -18,7 +21,11 @@ function ValidateToken(req, res, next) {
         return res.status(401).send({error: 'Token não informado...'});
     }
 
-    const [aux, token] = authtoken.split(' ');
+    //const [aux, token] = authtoken.split(' ');
+
+    const token = authtoken.replace('Bearer ', '');
+
+    //console.log(token)
 
     jwt.verify(token, secretKey, (error, decoded) => {
         if (error)
@@ -50,7 +57,6 @@ function VerificaIdToken(req, res, next) {
 
         if (idToken !== idUsuario.id)
             return res.status(401).send({error: 'Id Usuario informado, diferente do Id Token...'});
-
         next();
     });
 }
@@ -63,10 +69,7 @@ async function EncryptaPassword(password) {
 async function VerifyPassword(password, hash) {
     try {
         const match = await bcrypt.compare(password, hash);
-        if (match) {
-            return true;
-        }
-        return false;
+        return !!match;
     } catch (error) {
         return false;
     }
