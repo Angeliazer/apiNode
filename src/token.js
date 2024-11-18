@@ -22,10 +22,7 @@ function ValidateToken(req, res, next) {
     }
 
     //const [aux, token] = authtoken.split(' ');
-
     const token = authtoken.replace('Bearer ', '');
-
-    //console.log(token)
 
     jwt.verify(token, secretKey, (error, decoded) => {
         if (error)
@@ -47,7 +44,8 @@ function VerificaIdToken(req, res, next) {
         return res.status(401).send({error: 'Token não informado...'});
     }
 
-    const [aux, token] = authtoken.split(' ');
+    //const [aux, token] = authtoken.split(' ');
+    const token = authtoken.replace('Bearer ', '');
 
     jwt.verify(token, secretKey, (error, decoded) => {
         if (error)
