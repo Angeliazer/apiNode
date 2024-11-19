@@ -8,9 +8,11 @@ const secretKey = process.env.JWT_SECRET_KEY;
 
 function CreateToken(idUsuario) {
 
-    return jwt.sign({idUsuario}, secretKey, {
+    const token =  jwt.sign({idUsuario}, secretKey, {
         expiresIn: 9999999
     });
+
+    return token
 }
 
 function ValidateToken(req, res, next) {
