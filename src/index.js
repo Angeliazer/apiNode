@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 app.use(
   cors({
-    origin: "https://apinode-production-b096.up.railway.app",
+    origin: '*',
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
