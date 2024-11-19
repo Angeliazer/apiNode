@@ -13,7 +13,8 @@ config()
 // })
 
 const pool = new Pool({
-  connectionString: process.env.CONNECTING_POSTGRES
+  connectionString: process.env.DATABASE_URL,
+  ssl: { require : true}
 })
 
 export default pool

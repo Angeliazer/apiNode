@@ -1,15 +1,6 @@
 import serviceUsuario from "../services/service.usuario.js"
 import { Usuario } from "../models/model.usuario.js"
 
-// const data = [
-//     {name:"Maria Aparecida", email:"cida.rigon@hotmail.com", cargo: "professora", status: "ativo", password:"12345"},
-//     {name:"Alexsander", email:"alex@gmail.com", cargo: "bancário", status: "inativo", password:"12345"},
-//     {name:"Angélica Rigon", email:"jeca@gmail.com", cargo: "mestre", status: "ativo", password:"12345"},
-//     {name:"Angeliázer", email:"yyrigon@gmail.com", cargo: "gerente", status: "ativo", password:"Rigon"},
-//     {name:"Lanangel", email:"lana.rigon@hotmail.com", cargo: "dona de casa", status: "ativo", password:"12345"},
-//     {name:"Peterson", email:"peterson@gmail.com", cargo: "professor", status: "ativo", password:"Rigon"},
-// ]
-
 async function AddUsuario(req, res) {
   try {
     const { nome, email, password, apelido } = req.body
