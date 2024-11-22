@@ -28,13 +28,13 @@ router.get('/orcamentos/datas', jwt.ValidateToken, controllerOrcamento.ListaOrca
 router.delete('/orcamentos/delete', jwt.ValidateToken, controllerOrcamento.DelOrcamento);
 router.get('/orcamentos/items', jwt.ValidateToken, controllerOrcamento.ListaItemsOrcamento);
 
-
 // Rotas de Servicos
 router.post('/servicos/add', jwt.ValidateToken, controllerServico.AddServico);
 router.get('/servicos/clientes', jwt.ValidateToken, controllerServico.ListaServicoClientes);
 router.post('/orcamentos/pdf', jwt.ValidateToken, controllerOrcamento.GerarPDF);
 
 //Rotas de Categorias
+router.get('/categorias', jwt.ValidateToken, controllerCategoria.Listar)
 
 export default router;
 
