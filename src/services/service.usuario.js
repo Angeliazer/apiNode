@@ -25,9 +25,7 @@ async function AddUsuario(user) {
 async function Listar() {
   //Acessar o banco de dados....
 
-  const retorno = await repopsitoryUsuario.Listar()
-
-  return retorno
+   return await repopsitoryUsuario.Listar()
 }
 
 async function ListarId(id) {
@@ -49,7 +47,7 @@ async function Login(email, password) {
 
   const usuario = await repositoryUsuarioPostgree.ListarByEmail(email) // Chamada Postgre
 
-  if (usuario.length == 0) return []
+  if (usuario.length === 0) return []
 
   const ok = await jwt.VerifyPassword(password, usuario.password)
 

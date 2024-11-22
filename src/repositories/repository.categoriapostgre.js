@@ -2,7 +2,7 @@ import pool from '../database/dataPostgree.js';
 
 async function Listar() {
     try {
-        const sql = `select * from categorias`;
+        const sql = `select * from categoria`;
 
         const response = await pool.query(sql);
 
