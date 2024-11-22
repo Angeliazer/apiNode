@@ -3,6 +3,7 @@ import controllerUsuario from './controllers/controller.usuario.js';
 import controllerCliente from './controllers/controller.cliente.js';
 import controllerOrcamento from './controllers/controller.orcamento.js';
 import controllerServico from './controllers/controller.servico.js';
+import controllerCategoria from './controllers/controller.categoria.js';
 import jwt from './token.js';
 
 const router = Router();
@@ -35,7 +36,7 @@ router.get('/servicos/clientes', jwt.ValidateToken, controllerServico.ListaServi
 router.post('/orcamentos/pdf', jwt.ValidateToken, controllerOrcamento.GerarPDF);
 
 //Rotas de Categorias
-router.get('/categorias', jwt.ValidateToken, controllerCategorias.ListarCategorias)
+router.get('/categorias', jwt.ValidateToken, controllerCategoria.Listar)
 
 export default router;
 
