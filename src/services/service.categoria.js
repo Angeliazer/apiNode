@@ -3,7 +3,7 @@ import repositoryCategoriapostgre from '../repositories/repository.categoriapost
 async function Listar() {
     //Acessar o banco de dados....
 
-    return await repositoryCategoriapostgre.Listar // Chamada Banco de dados Postgre
+    return await repositoryCategoriapostgre.Listar() // Chamada Banco de dados Postgre
 }
 
 export default Listar;
