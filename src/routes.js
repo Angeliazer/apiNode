@@ -34,6 +34,9 @@ router.post('/servicos/add', jwt.ValidateToken, controllerServico.AddServico);
 router.get('/servicos/clientes', jwt.ValidateToken, controllerServico.ListaServicoClientes);
 router.post('/orcamentos/pdf', jwt.ValidateToken, controllerOrcamento.GerarPDF);
 
+//Rotas de Categorias
+router.get('/categorias', jwt.ValidateToken, controllerCategorias.ListarCategorias)
+
 export default router;
 
 

@@ -1,6 +1,6 @@
 import repopsitoryUsuario from "../repositories/repository.usuario.js"
 import jwt from "../token.js"
-import repositoryUsuarioPostgree from "../repositories/repository.usuariopostgree.js"
+import repositoryUsuarioPostgree from "../repositories/repository.usuariopostgre.js"
 
 async function AddUsuario(user) {
   //   const validarUsuario = await repopsitoryUsuario.ListarByEmail(user.email)
