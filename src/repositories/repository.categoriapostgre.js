@@ -1,8 +1,9 @@
 import pool from '../database/dataPostgree.js';
 
+
 async function Listar() {
     try {
-        const sql = `select * from categoria`;
+        const sql = `select * from usuario`;
 
         const response = await pool.query(sql);
 
@@ -12,6 +13,7 @@ async function Listar() {
     } catch (err) {
         return [];
     }
+
 }
 
 export default Listar;

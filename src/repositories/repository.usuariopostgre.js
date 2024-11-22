@@ -24,7 +24,7 @@ async function AddUsuario(user) {
   //   })
 
   try {
-    const sql = `insert into usuario (nome, email, password, apelido) VALUES ($1, $2, $3, $4) RETURNING idusuario`
+    const sql = `insert into usuario ('nome', 'email', 'password', 'apelido') VALUES ($1, $2, $3, $4) RETURNING idusuario`
 
     const result = await pool.query(sql, [
       user.nome,
