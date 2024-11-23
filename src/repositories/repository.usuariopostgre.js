@@ -33,7 +33,7 @@ async function AddUsuario(user) {
             user.dataCadastro
         ]);
 
-        return {idUsuario: result.rows[0].idusuario};
+        return {idusuario: result.rows[0].idusuario};
     } catch (error) {
         return {error};
     }

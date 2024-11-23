@@ -6,7 +6,13 @@ async function AddUsuario(req, res) {
 
     const usuario = await serviceUsuario.AddUsuario(user)
 
-    if (usuario.idUsuario) {
+    console.log(usuario)
+
+    user.idusuario = usuario.idusuario
+    user.token = usuario.token
+    delete user.password
+
+    if (usuario.idusuario) {
       res.status(201).json(user)
     }
       else
