@@ -7,8 +7,7 @@ async function ListarByEmail(email) {
     const response = await pool.query(sql, [email])
 
     if (response.rows.length === 0) return []
-      else 
-         return response.rows[0]
+    else return response.rows[0]
   } catch (err) {
     return []
   }
