@@ -10,11 +10,6 @@ const Listar = async () => {
 
     if (response.rows.length === 0) return []
     else return response.rows
-
-    // return [
-    //   { idcategoria: 1, descricao: "calças" },
-    //   { idcategoria: 2, descricao: "camisas" },
-    // ]
   } catch (err) {
     return []
   }
