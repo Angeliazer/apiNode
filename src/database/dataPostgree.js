@@ -12,7 +12,7 @@ const pool = new Pool({
   port: process.env.PGPORT,
 })
 
-// const pool = new Pool({
+//const pool = new Pool({
 //   connectionString: process.env.DATABASE_URL
 // });
 
