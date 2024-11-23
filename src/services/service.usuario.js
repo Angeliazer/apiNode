@@ -1,6 +1,6 @@
 import repopsitoryUsuario from "../repositories/repository.usuario.js"
 import jwt from "../token.js"
-import repositoryUsuarioPostgree from "../repositories/repository.usuariopostgre.js"
+import repositoryUsuarioPostgre from "../repositories/repository.usuariopostgre.js"
 
 async function AddUsuario(user) {
   //   const validarUsuario = await repopsitoryUsuario.ListarByEmail(user.email)
@@ -45,7 +45,7 @@ async function Login(email, password) {
 
   //const usuario = await repopsitoryUsuario.ListarByEmail(email) // Chamada Mssql
 
-  const usuario = await repositoryUsuarioPostgree.ListarByEmail(email) // Chamada Postgre
+  const usuario = await repositoryUsuarioPostgre.ListarByEmail(email) // Chamada Postgre
 
   if (usuario.length === 0) return []
 

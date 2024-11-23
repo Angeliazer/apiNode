@@ -1,4 +1,6 @@
 import {Router} from 'express';
+
+import controllerCategoria from './controllers/controller.categoria.js';
 import controllerUsuario from './controllers/controller.usuario.js';
 import controllerCliente from './controllers/controller.cliente.js';
 import controllerOrcamento from './controllers/controller.orcamento.js';
@@ -32,6 +34,9 @@ router.get('/orcamentos/items', jwt.ValidateToken, controllerOrcamento.ListaItem
 router.post('/servicos/add', jwt.ValidateToken, controllerServico.AddServico);
 router.get('/servicos/clientes', jwt.ValidateToken, controllerServico.ListaServicoClientes);
 router.post('/orcamentos/pdf', jwt.ValidateToken, controllerOrcamento.GerarPDF);
+
+//Rotas de Categorias
+router.get('/categorias', jwt.ValidateToken, controllerCategoria.Listar);
 
 export default router;
 
