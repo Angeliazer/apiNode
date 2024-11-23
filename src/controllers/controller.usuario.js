@@ -7,7 +7,7 @@ async function AddUsuario(req, res) {
     const usuario = await serviceUsuario.AddUsuario(user)
 
     if (usuario.idUsuario) {
-      res.status(201).json(usuario)
+      res.status(201).json(user)
     }
       else
          res.status(500).json({error: 'Erro na requisição ao Banco de Dados...'})
