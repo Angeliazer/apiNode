@@ -1,9 +1,10 @@
-import repopsitoryCategoriasposgre from '../repositories/repository.catetoriapostgre.js';
+import repopsitoryCategoriaspostgre from '../repositories/repository.catetoriapostgre.js';
 
 async function Listar() {
     //Acessar o banco de dados....
 
-    return await repopsitoryCategoriasposgre.Listar();
+    const retorno =  await repopsitoryCategoriaspostgre.Listar();
+    return retorno;
 }
 
 export default Listar;
