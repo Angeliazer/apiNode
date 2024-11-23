@@ -1,19 +1,16 @@
 import serviceUsuario from "../services/service.usuario.js"
-import { Usuario } from "../models/model.usuario.js"
 
 async function AddUsuario(req, res) {
   try {
-    const { nome, email, password, apelido } = req.body
-
-    const user = new Usuario(nome, email, password, apelido)
+    const user = {...req.body}
 
     const usuario = await serviceUsuario.AddUsuario(user)
 
     if (usuario.idUsuario) {
       res.status(201).json(usuario)
     }
-    //   else
-    //     res.status(500).json({error: 'Erro na requisição ao Banco de Dados...'})
+      else
+         res.status(500).json({error: 'Erro na requisição ao Banco de Dados...'})
   } catch (error) {
     res.status(401).json({ error: error })
   }
