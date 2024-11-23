@@ -36,30 +36,6 @@ function ValidateToken(req, res, next) {
     });
 }
 
-function VerificaIdToken(req, res, next) {
-
-    const idUsuario = req.params;
-
-    const authtoken = req.headers.authorization;
-
-    if (!authtoken) {
-        return res.status(401).send({error: 'Token não informado...'});
-    }
-
-    const [aux, token] = authtoken.split(' ');
-    //const token = authtoken.replace('Bearer ', '');
-
-    jwt.verify(token, secretKey, (error, decoded) => {
-        if (error)
-            return res.status(401).send({error: 'Token inválido...'});
-
-        const idToken = decoded.idUsuario;
-
-        if (idToken !== idUsuario.id)
-            return res.status(401).send({error: 'Id Usuario informado, diferente do Id Token...'});
-        next();
-    });
-}
 
 async function EncryptaPassword(password) {
 
@@ -75,4 +51,4 @@ async function VerifyPassword(password, hash) {
     }
 }
 
-export default {CreateToken, ValidateToken, EncryptaPassword, VerifyPassword, VerificaIdToken};
+export default {CreateToken, ValidateToken, EncryptaPassword, VerifyPassword};

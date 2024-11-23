@@ -1,18 +1,40 @@
 import serviceCategoria from '../services/service.categoria.js';
 
-async function Listar(req, res) {
+async function Listar (req, res) {
     try {
 
-        const categorias = await serviceCategoria.Listar()
+        console.log('1');
 
-        console.log(categorias)
+        const categorias = await serviceCategoria.Listar();
 
-        if (categorias.length > 0) res.status(200).json(categorias);
-        else
-            res.status(500).json({ error: "Erro na requisição ao Banco de Dados..." })
+        console.log('2');
+
+        if (categorias.length > 0) {
+            res.status(200).json(categorias);
+        } else
+            res.status(500).json({error: 'Erro na requisição ao Banco de Dados...'});
     } catch (error) {
-        res.status(500).json({ status: error })
+        res.status(500).json({status: error.message});
     }
 }
 
-export default {Listar}
+async function Listars (req, res) {
+    try {
+
+        console.log('1');
+
+        const categorias = await serviceCategoria.Listar();
+
+        console.log('2');
+
+        if (categorias.length > 0) {
+            res.status(200).json(categorias);
+        } else
+            res.status(500).json({error: 'Erro na requisição ao Banco de Dados...'});
+    } catch (error) {
+        res.status(500).json({status: error.message});
+    }
+}
+
+export default {Listar, Listars};
+
