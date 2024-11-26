@@ -34,14 +34,13 @@ async function Listar(req, res) {
 
 async function Login(req, res) {
   try {
-    //const {email, password} = req.body
+    const {email, password} = req.body
 
-    const login = { ...req.body }
-
-    const usuario = await serviceUsuario.Login(login.email, login.password)
+    const usuario = await serviceUsuario.Login(email, password)
 
     if (usuario.length !== 0) res.status(200).json(usuario)
-    else res.status(401).json({ error: "Usuário ou Senha inválidos..." })
+      else
+        res.status(401).json('Não autorizado...!')
   } catch (error) {
     res.status(500).json({ error })
   }

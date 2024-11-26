@@ -6,9 +6,9 @@ config();   // Busca informações no .env
 
 const secretKey = process.env.JWT_SECRET_KEY;
 
-function CreateToken(idUsuario) {
+function CreateToken(idusuario) {
 
-    const token =  jwt.sign({idUsuario}, secretKey, {
+    const token =  jwt.sign({idusuario}, secretKey, {
         expiresIn: 9999999
     });
 

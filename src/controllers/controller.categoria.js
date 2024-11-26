@@ -15,7 +15,8 @@ const Listar = async (req, res) => {
 
 const Add = async (req, res) => {
     try {
-        const category = {...req.body};
+
+        console.log(req.body);
 
         const categoria = await serviceCategoria.Add(category);
 

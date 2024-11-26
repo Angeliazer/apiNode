@@ -37,9 +37,9 @@ async function Perfil(id) {
 async function Login(email, password) {
     //Acessar o banco de dados....
 
-    //const usuario = await repopsitoryUsuario.ListarByEmail(email) // Chamada Mssql
-
     const usuario = await repositoryUsuarioPostgre.ListarByEmail(email); // Chamada Postgre
+
+    console.log(usuario);
 
     if (usuario.length === 0) return [];
 
@@ -47,7 +47,9 @@ async function Login(email, password) {
 
     if (!ok) return [];
 
-    usuario.token = jwt.CreateToken(usuario.idUsuario);
+    console.log("ok");
+
+    usuario.token = jwt.CreateToken(usuario.idusuario);
     delete usuario.password;
 
     return usuario;

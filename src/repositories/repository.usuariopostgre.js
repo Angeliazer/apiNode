@@ -2,10 +2,15 @@ import pool from '../database/dataPostgree.js';
 
 async function ListarByEmail(email) {
     try {
+
+        console.log(email)
+
         const sql = `select * from usuario where email = $1`;
         const response = await pool.query(sql, [email]);
+
         if (response.rows.length === 0) return [];
-        else return response.rows[0];
+           else
+               return response.rows[0];
     } catch (err) {
         return [];
     }
