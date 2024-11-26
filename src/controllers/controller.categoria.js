@@ -1,5 +1,4 @@
 import serviceCategoria from '../services/service.categoria.js';
-import Categoria from '../models/model.categoria.js';
 
 const Listar = async (req, res) => {
     try {
@@ -16,14 +15,13 @@ const Listar = async (req, res) => {
 
 const Add = async (req, res) => {
     try {
-
-        const category = new Categoria({...req.body});
+        const category = {...req.body};
 
         const categoria = await serviceCategoria.Add(category);
 
         if (categoria.idcategoria) {
             category.idcategoria = categoria.idcategoria;
-            res.status(201).json(categoria);
+            res.status(201).json(category.idcategoria);
         } else
             res.status(401).json({error: 'Não autorizado...!'});
     } catch (error) {
