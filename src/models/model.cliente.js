@@ -12,5 +12,4 @@ export class Cliente {
         this.telefone = telefone;
         this.idUsuario = idUsuario
     }
-
 }

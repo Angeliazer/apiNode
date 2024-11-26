@@ -1,4 +1,6 @@
 import serviceCategoria from '../services/service.categoria.js';
+import serviceUsuario from '../services/service.usuario.js';
+import Categoria from '../models/model.categoria.js';
 
 const Listar = async (req, res) => {
     try {
@@ -12,4 +14,22 @@ const Listar = async (req, res) => {
         res.status(500).json({error: error.message});
     }
 };
-export default {Listar};
+
+const Add = async (req, res) => {
+    try {
+
+        const category = new Categoria(req.body);
+
+        const categoria = await serviceUsuario.Add(category);
+
+
+        if (categoria.idcategoria) {
+            category.idcategoria = categoria.idcategoria;
+            res.status(201).json(categoria);
+        } else
+            res.status(500).json({error: 'Erro na requisição ao Banco de Dados...'});
+    } catch (error) {
+        res.status(401).json({error: error});
+    }
+};
+export default {Listar, Add};

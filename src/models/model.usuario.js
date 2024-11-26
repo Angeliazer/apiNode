@@ -1,4 +1,3 @@
-
 export default class Usuario {
     constructor (nome, email, password, apelido, dataCadastro){
         this.nome = nome;

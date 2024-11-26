@@ -15,4 +15,19 @@ const Listar = async () => {
     }
 };
 
-export default {Listar};
+async function Add(categoria) {
+
+    try {
+        const sql = `insert into categoria ("descricao") VALUES ($1) RETURNING idcatetoria`;
+
+        const result = await pool.query(sql, [
+            categoria.descricao
+        ]);
+
+        return {idcategoria: result.rows[0].idcategoria};
+    } catch (error) {
+        return {error};
+    }
+}
+
+export default {Listar, Add};

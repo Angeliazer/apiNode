@@ -69,5 +69,6 @@ router.post("/orcamentos/pdf", jwt.ValidateToken, controllerOrcamento.GerarPDF)
 
 // Rotas de Categorias
 router.get("/categorias", jwt.ValidateToken, controllerCategoria.Listar)
+router.post("/categorias", jwt.ValidateToken, controllerCategoria.Add)
 
 export default router
