@@ -18,10 +18,11 @@ const Listar = async (req, res) => {
 const Add = async (req, res) => {
     try {
 
-        const category = new Categoria(req.body);
+        const category = new Categoria({...req.body});
+
+        console.log(category);
 
         const categoria = await serviceUsuario.Add(category);
-
 
         if (categoria.idcategoria) {
             category.idcategoria = categoria.idcategoria;
