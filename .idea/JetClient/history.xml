@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="History">
+    <option name="requestHistoryStates">
+      <list>
+        <requestHistoryState>
+          <option name="dateTime" value="1732632870513" />
+          <option name="id" value="f1493dd4-e2f9-40c5-b94b-eb27fe5ccb1b" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{ &#10;  &quot;descricao&quot; : &quot;Blazer&quot;&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="id" value="9f1f9728-405b-4405-8a0e-8100ed225ca3" />
+              <option name="method" value="POST" />
+              <option name="name" value="Draft" />
+              <option name="url" value="https://apinode-production-b096.up.railway.app/categorias" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJzdGF0dXMiOiJlcnJvciIsImNvZGUiOjUwMiwibWVzc2FnZSI6IkFwcGxpY2F0aW9uIGZhaWxlZCB0byByZXNwb25kIiwicmVxdWVzdF9pZCI6ImljUVVjR2VDU0hTM00zeHMzR05zaXdfNjAzNTI0NTgwIn0=" />
+              <option name="bodyString" value="{&#10;  &quot;status&quot;: &quot;error&quot;,&#10;  &quot;code&quot;: 502,&#10;  &quot;message&quot;: &quot;Application failed to respond&quot;,&#10;  &quot;request_id&quot;: &quot;icQUcGeCSHS3M3xs3GNsiw_603524580&quot;&#10;}" />
+              <option name="code" value="502" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="119" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="railway-edge" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Railway-Fallback" />
+                    <option name="value" value="true" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Railway-Request-Id" />
+                    <option name="value" value="icQUcGeCSHS3M3xs3GNsiw_603524580" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Tue, 26 Nov 2024 14:54:28 GMT" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f1493dd4-e2f9-40c5-b94b-eb27fe5ccb1b" />
+              <option name="message" value="Bad Gateway" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:502,&quot;message&quot;:&quot;Application failed to respond&quot;,&quot;request_id&quot;:&quot;icQUcGeCSHS3M3xs3GNsiw_603524580&quot;}" />
+              <option name="size" value="119" />
+              <option name="time" value="10598" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1732633238087" />
+          <option name="id" value="51d745f4-72ce-4fc1-bf83-4005a67aa376" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{ &#10;  &quot;descricao&quot; : &quot;Blazer&quot;&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="id" value="9f1f9728-405b-4405-8a0e-8100ed225ca3" />
+              <option name="method" value="POST" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost:3001/categorias" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJlcnJvciI6IlRva2VuIG7Do28gaW5mb3JtYWRvLi4uIn0=" />
+              <option name="bodyString" value="{&#10;  &quot;error&quot;: &quot;Token não informado...&quot;&#10;}" />
+              <option name="code" value="401" />
+              <option name="contentType" value="application/json; charset=utf-8" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="Express" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json; charset=utf-8" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="35" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="ETag" />
+                    <option name="value" value="W/&quot;23-6CzRIFrLytnj0buiGZd/ebfYq5M&quot;" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Tue, 26 Nov 2024 15:00:38 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="keep-alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="51d745f4-72ce-4fc1-bf83-4005a67aa376" />
+              <option name="message" value="Unauthorized" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;error&quot;:&quot;Token não informado...&quot;}" />
+              <option name="size" value="35" />
+              <option name="time" value="28" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+      </list>
+    </option>
+  </component>
+</project>
