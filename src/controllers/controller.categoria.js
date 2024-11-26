@@ -16,15 +16,13 @@ const Listar = async (req, res) => {
 const Add = async (req, res) => {
     try {
         const category = req.body;
+
         const categoria = await serviceCategoria.Add(category);
 
-        console.log(categoria);
+        category.idcategoria = categoria.idcategoria;
 
         if (categoria.idcategoria) {
-            category.idcategoria = categoria.idcategoria;
-            res.status(201).json(category.idcategoria);
-        } else
-            res.status(401).json({error: 'Não autorizado...!'});
+            res.status(201).json(category.idcategoria);}
     } catch (error) {
         res.status(500).json({error: error});
     }

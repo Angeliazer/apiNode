@@ -3,6 +3,7 @@ import repopsitoryUsuario from '../repositories/repository.usuario.js';
 import repositoryUsuarioPostgre from '../repositories/repository.usuariopostgre.js';
 
 async function AddUsuario(user) {
+
     const validarUsuario = await repositoryUsuarioPostgre.ListarByEmail(user.email);
 
     if (validarUsuario.idusuario) throw 'E-mail de usuário já cadastrado....!';
@@ -10,9 +11,6 @@ async function AddUsuario(user) {
     user.password = await jwt.EncryptaPassword(user.password);
 
     return await repositoryUsuarioPostgre.AddUsuario(user);
-
-    // usuario.token = jwt.CreateToken(usuario.idUsuario);
-    // return usuario;
 }
 
 async function Listar() {
@@ -37,15 +35,11 @@ async function Login(email, password) {
 
     const usuario = await repositoryUsuarioPostgre.ListarByEmail(email); // Chamada Postgre
 
-    console.log(usuario);
-
     if (usuario.length === 0) return [];
 
-    const ok = await jwt.VerifyPassword(password, usuario.password);
+    const ok = await jwt.VerifyPassword(password, usuario.password.trim());
 
     if (!ok) return [];
-
-    console.log("ok");
 
     usuario.token = jwt.CreateToken(usuario.idusuario);
     delete usuario.password;

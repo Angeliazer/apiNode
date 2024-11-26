@@ -5,9 +5,9 @@ const Listar = async () => {
   return await repositoryCategoria.Listar()
 }
 
-const Add = async () => {
+const Add = async (categoria) => {
   //Acessar o banco de dados....
-  return await repositoryCategoria.Add()
+  return await repositoryCategoria.Add(categoria)
 }
 
 export default { Listar, Add }

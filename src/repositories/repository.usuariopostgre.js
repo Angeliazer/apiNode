@@ -2,13 +2,13 @@ import pool from '../database/dataPostgree.js';
 
 async function ListarByEmail(email) {
     try {
-        pool.connect((err, client, release) => {
-          if (err) {
-            return console.error("Erro ao conectar ao banco de dados:", err.stack)
-          }
-          console.log("Conectado ao banco de dados com sucesso")
-          release()
-        })
+        // pool.connect((err, client, release) => {
+        //   if (err) {
+        //     return console.error("Erro ao conectar ao banco de dados:", err.stack)
+        //   }
+        //   console.log("Conectado ao banco de dados com sucesso")
+        //   release()
+        // })
         const sql = `select * from usuario where email = $1`;
 
         const response = await pool.query(sql, [email]);
@@ -45,6 +45,8 @@ async function AddUsuario(user) {
 
         return {idusuario: result.rows[0].idusuario};
     } catch (error) {
+
+        console.log(error);
         return {error};
     }
 }

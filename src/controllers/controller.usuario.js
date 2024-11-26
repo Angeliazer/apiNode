@@ -11,12 +11,10 @@ async function AddUsuario(req, res) {
     delete user.password
 
     if (usuario.idusuario) {
-      res.status(201).json(user)
+      res.status(201).json(user);
     }
-      else
-         res.status(500).json({error: 'Erro na requisição ao Banco de Dados...'})
   } catch (error) {
-    res.status(401).json({ error: error })
+    res.status(500).json({ error: error })
   }
 }
 
@@ -38,9 +36,7 @@ async function Login(req, res) {
 
     const usuario = await serviceUsuario.Login(email, password)
 
-    if (usuario.length !== 0) res.status(200).json(usuario)
-      else
-        res.status(401).json('Não autorizado...!')
+    if (usuario.length !== 0) res.status(200).json(usuario);
   } catch (error) {
     res.status(500).json({ error })
   }
