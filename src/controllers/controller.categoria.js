@@ -18,6 +18,8 @@ const Add = async (req, res) => {
         const category = req.body;
         const categoria = await serviceCategoria.Add(category);
 
+        console.log(categoria);
+
         if (categoria.idcategoria) {
             category.idcategoria = categoria.idcategoria;
             res.status(201).json(category.idcategoria);

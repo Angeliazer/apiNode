@@ -9,16 +9,14 @@ async function AddUsuario(user) {
 
     user.password = await jwt.EncryptaPassword(user.password);
 
-    const usuario = await repositoryUsuarioPostgre.AddUsuario(user);
+    return await repositoryUsuarioPostgre.AddUsuario(user);
 
-    usuario.token = jwt.CreateToken(usuario.idUsuario);
-
-    return usuario;
+    // usuario.token = jwt.CreateToken(usuario.idUsuario);
+    // return usuario;
 }
 
 async function Listar() {
     //Acessar o banco de dados....
-
     return await repopsitoryUsuario.Listar();
 }
 
