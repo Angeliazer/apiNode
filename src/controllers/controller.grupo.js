@@ -19,7 +19,7 @@ const Add = async (req, res) => {
 
         const group = new Grupo({...req.body});
 
-        const grupo = await serviceUsuario.Add(group);
+        const grupo = await serviceGrupo.Add(group);
 
         if (grupo.idgrupo) {
             group.idgrupo = grupo.idgrupo;

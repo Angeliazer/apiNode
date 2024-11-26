@@ -1,5 +1,4 @@
 import serviceCategoria from '../services/service.categoria.js';
-import serviceUsuario from '../services/service.usuario.js';
 import Categoria from '../models/model.categoria.js';
 
 const Listar = async (req, res) => {
@@ -22,7 +21,7 @@ const Add = async (req, res) => {
 
         console.log(category);
 
-        const categoria = await serviceUsuario.Add(category);
+        const categoria = await serviceCategoria.Add(category);
 
         if (categoria.idcategoria) {
             category.idcategoria = categoria.idcategoria;
