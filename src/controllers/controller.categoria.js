@@ -19,17 +19,15 @@ const Add = async (req, res) => {
 
         const category = new Categoria({...req.body});
 
-        console.log(category);
-
         const categoria = await serviceCategoria.Add(category);
 
         if (categoria.idcategoria) {
             category.idcategoria = categoria.idcategoria;
             res.status(201).json(categoria);
         } else
-            res.status(500).json({error: 'Erro na requisição ao Banco de Dados...'});
+            res.status(401).json({error: 'Não autorizado...!'});
     } catch (error) {
-        res.status(401).json({error: error});
+        res.status(500).json({error: error});
     }
 };
 export default {Listar, Add};
