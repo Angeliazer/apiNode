@@ -3,7 +3,7 @@ import pool from '../database/dataPostgree.js';
 const Listar = async () => {
     try {
         const sql = `select *
-                     from categoria`;
+                     from categoria order by descricao`;
         const response = await pool.query(sql);
         if (response.rows.length !== 0) {
             return response.rows;
