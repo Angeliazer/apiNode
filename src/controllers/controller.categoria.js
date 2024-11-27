@@ -22,7 +22,7 @@ const Add = async (req, res) => {
         category.idcategoria = categoria.idcategoria;
 
         if (categoria.idcategoria) {
-            res.status(201).json(category.idcategoria);}
+            res.status(201).json({idcategoria : category.idcategoria}); }
     } catch (error) {
         res.status(500).json({error: error});
     }
