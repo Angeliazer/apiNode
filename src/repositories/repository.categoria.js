@@ -28,4 +28,19 @@ async function Add(categoria) {
     }
 }
 
-export default {Listar, Add};
+async function Update(categoria) {
+
+    try {
+        const sql = `update categoria set descricao = $1 where idcategoria = $2`;
+
+        const result = await pool.query(sql, [categoria.descricao, categoria.idcategoria]);
+
+        console.log(result);
+
+        return {idcategoria: result.rows[0].idcategoria};
+    } catch (error) {
+        return {error};
+    }
+}
+
+export default {Listar, Add, Update};

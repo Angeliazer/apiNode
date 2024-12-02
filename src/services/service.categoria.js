@@ -10,4 +10,8 @@ const Add = async (categoria) => {
   return await repositoryCategoria.Add(categoria)
 }
 
-export default { Listar, Add }
+const Update = async (categoria) => {
+  //Acessar o banco de dados....
+  return await repositoryCategoria.Update(categoria)
+}
+export default { Listar, Add, Update }

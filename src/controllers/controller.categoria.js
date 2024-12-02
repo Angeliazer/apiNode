@@ -27,4 +27,20 @@ const Add = async (req, res) => {
         res.status(500).json({error: error});
     }
 };
-export default {Listar, Add};
+
+const Update = async (req, res) => {
+    try {
+        const category = req.body;
+
+        const categoria = await serviceCategoria.Update(category);
+
+        category.idcategoria = categoria.idcategoria;
+
+        if (categoria.idcategoria) {
+            res.status(201).json({idcategoria : category.idcategoria}); }
+    } catch (error) {
+        res.status(500).json({error: error});
+    }
+};
+
+export default {Listar, Add, Update};
