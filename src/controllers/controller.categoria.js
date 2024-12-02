@@ -34,9 +34,7 @@ const Update = async (req, res) => {
 
         const categoria = await serviceCategoria.Update(category);
 
-        category.idcategoria = categoria.idcategoria;
-
-        if (categoria.idcategoria) {
+        if (categoria === 1) {
             res.status(201).json({idcategoria : category.idcategoria}); }
     } catch (error) {
         res.status(500).json({error: error});

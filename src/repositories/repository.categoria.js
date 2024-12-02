@@ -35,11 +35,9 @@ async function Update(categoria) {
 
         const result = await pool.query(sql, [categoria.descricao, categoria.idcategoria]);
 
-        console.log(result);
-
-        return {idcategoria: result.rows[0].idcategoria};
+        return result.rowCount;
     } catch (error) {
-        return {error};
+        return error;
     }
 }
 
