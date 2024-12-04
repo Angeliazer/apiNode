@@ -1,11 +1,13 @@
+import {api} from '../instance-axios.js';
+
 const Add = (req, res) =>
 {
     try {
-        const user = {...req.body};
+        const cliente = {...req.body};
 
-        console.log(user);
-        res.status(200).send(user);
+        const response = api.post('/customers', cliente);
 
+        res.status(200).json(response);
 
     } catch (error) {
         res.status(500).json({error: error});
