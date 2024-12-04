@@ -1,14 +1,13 @@
-import {config} from 'dotenv';
 import {api} from '../instance-axios.js';
 
-config();
+const Add = async (req, res) => {
 
-const Add = (req, res) => {
     try {
         const cliente = {...req.body};
 
+        console.log(cliente);
 
-        const response = api.post('/customers', cliente, {
+        const response = await api.post('/customers', cliente, {
             headers: {
                 'accept': 'application/json',
                 'Content-Type': 'application/json',
