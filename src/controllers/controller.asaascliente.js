@@ -1,7 +1,9 @@
+import {config} from 'dotenv';
 import {api} from '../instance-axios.js';
 
-const Add = async (req, res) => {
+config();
 
+const Add = async (req, res) => {
     try {
         const cliente = {...req.body};
 
