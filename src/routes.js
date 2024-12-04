@@ -5,6 +5,7 @@ import controllerCliente from './controllers/controller.cliente.js';
 import controllerOrcamento from './controllers/controller.orcamento.js';
 import controllerServico from './controllers/controller.servico.js';
 import controllerCategoria from './controllers/controller.categoria.js';
+import controllerAsaas from './controllers/controller.asaascliente.js';
 import jwt from './token.js';
 
 const router = Router();
@@ -71,5 +72,7 @@ router.post('/orcamentos/pdf', jwt.ValidateToken, controllerOrcamento.GerarPDF);
 router.get('/categorias', jwt.ValidateToken, controllerCategoria.Listar);
 router.post('/categorias', jwt.ValidateToken, controllerCategoria.Add);
 router.put('/categorias', jwt.ValidateToken, controllerCategoria.Update);
+
+router.post('/clienteAsaas', jwt.ValidateToken, controllerAsaas.Add);
 
 export default router;
