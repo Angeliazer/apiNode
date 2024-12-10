@@ -6,17 +6,14 @@ async function AddUsuario(req, res) {
 
         const usuario = await serviceUsuario.AddUsuario(user);
 
-        console.log(usuario);
-
         if (usuario.idusuario) {
             user.idusuario = usuario.idusuario;
             user.token = usuario.token;
             delete user.password;
             res.status(201).json(user);
-        } else
-            res.status(401).json({error: 'Email de Usuário já cadastrado...!'});
+        }
     } catch (error) {
-        res.status(500).json({error: error});
+        res.status(401).json({error: error});
     }
 }
 
