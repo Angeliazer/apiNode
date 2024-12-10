@@ -13,6 +13,9 @@ async function AddUsuario(req, res) {
     if (usuario.idusuario) {
       res.status(201).json(user);
     }
+      else {
+        res.status(401).json({ error: 'Email de Usuário já cadastrado...!' })
+    }
   } catch (error) {
     res.status(500).json({ error: error })
   }
