@@ -6,6 +6,8 @@ async function AddUsuario(req, res) {
 
         const usuario = await serviceUsuario.AddUsuario(user);
 
+        console.log(usuario);
+
         if (usuario.idusuario) {
             user.idusuario = usuario.idusuario;
             user.token = usuario.token;
