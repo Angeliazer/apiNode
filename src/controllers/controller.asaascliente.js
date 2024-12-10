@@ -7,8 +7,6 @@ const Add = async (req, res) => {
     try {
         const cliente = {...req.body};
 
-        console.log(cliente);
-
         const response = await api.post('/customers', cliente, {
             headers: {
                 'accept': 'application/json',

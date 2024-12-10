@@ -36,7 +36,9 @@ async function Login(req, res) {
 
     const usuario = await serviceUsuario.Login(email, password)
 
-    if (usuario.length !== 0) res.status(200).json(usuario);
+    if (usuario.length !== 0) res.status(200).json(usuario)
+       else
+         res.status(401).json({ error : 'Usuário ou Senha, inválido...!'})
   } catch (error) {
     res.status(500).json({ error })
   }
