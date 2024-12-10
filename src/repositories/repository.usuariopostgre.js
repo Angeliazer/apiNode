@@ -45,7 +45,6 @@ async function AddUsuario(user) {
 
         return {idusuario: result.rows[0].idusuario};
     } catch (error) {
-
         console.log(error);
         return {error};
     }

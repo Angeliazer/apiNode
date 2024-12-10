@@ -6,7 +6,8 @@ async function AddUsuario(user) {
 
     const validarUsuario = await repositoryUsuarioPostgre.ListarByEmail(user.email);
 
-    if (validarUsuario.idusuario) throw 'E-mail de usuário já cadastrado....!';
+    if (validarUsuario.idusuario)
+        return {idusuario: -1};
 
     user.password = await jwt.EncryptaPassword(user.password);
 
